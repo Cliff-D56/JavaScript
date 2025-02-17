@@ -18,6 +18,7 @@ nums.indexOf(2.5)
 // For Primitives, includes method works since it searches for values
 console.log(nums.includes(2))
 // However since objects are references it won't find the value but the reference point so it will return false
+// @ts-ignore
 console.log(objs.includes(1))
 /*Which is why find is the method for objects since those objects are put into a function(Predicate) 
 and the function finds the reference point's value*/
@@ -104,7 +105,7 @@ function includes(arrays,searchElement){
     return false;
 }
 function except(array,excluded){
-    newarray =[];
+    let newarray =[];
     array.forEach(index=>{
         let incuded = false;
         for (let element of excluded) {
@@ -112,7 +113,7 @@ function except(array,excluded){
                incuded = true;
                continue;
             }else{
-                included = false;
+                incuded = false;
             }
         }
         if(incuded==false){
@@ -181,6 +182,7 @@ let filter = movies
 .filter(function(value){
     return value.rating > 4 && value.year===2018;
 })
+// @ts-ignore
 .sort((a,b )=>a-b)
 .reverse()
 .map(title => title.title) 
