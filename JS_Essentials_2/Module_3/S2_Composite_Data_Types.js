@@ -164,6 +164,7 @@ let collection1 = [1,2,3,4,5];
 let collection2 = new Set([1,2,3,4,5]);
 let collection3 = new Map([[1,"one"],[2,"two"],[3,"three"],[4,"four"],[5,"five"]]); //requires an index for loop
 
+// To check for the type of collection use the instanceof operator
 for(let item of collection3){
     if (collection1 instanceof Map){
         console.log(item[0], item[1]);
@@ -171,4 +172,11 @@ for(let item of collection3){
     else{
         console.log(item);
     }
+}
+
+// Objects can be used as collections as well, the biggest difference is that objects are not iterable and require a for in loop
+let object = {a:1,b:2,c:3,d:4,e:5};
+for(let key in object){
+    console.log(key);
+    console.log(object[key]);
 }
