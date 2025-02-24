@@ -134,3 +134,41 @@
     let [item1,item2] = set2; //destructuring the set into sepeatete variables
     let spread = [...set2]; //spreads the set into a new array
 }
+// Maps
+{
+   let map1 = new Map(); //creates an empty map
+   let map2 = new Map([[1,"one"],[2,"two"]]); //creates a map with key-value pairs 
+
+   // Map Methods and Properties
+   let has = map2.has(1); //returns true if the map includes the key (1)
+   let get = map2.get(1); //returns the value of the key (1)
+   map2.set(3,"three"); //adds a key-value pair to the map
+   map2.delete(1); //removes a key-value pair from the map, based on the key
+   map2.clear(); //removes all key-value pairs from the map
+   let size = map2.size; //returns the size of the map
+
+    // MAP ITERATION
+    map2.forEach((key,value)=>console.log(key,value)); //iterates over each key-value pair in the map
+    
+    // ALL iterators use the next().value method to access the values as well as the done property to check if the iterator has reached the end of the map
+    let mapValue = map2.values(); //returns an iterator of the values in the map
+    let mapKey = map2.keys(); //returns an iterator of the keys in the map
+    let mapEntry = map2.entries(); //returns an iterator of the key-value pairs in the map
+
+    // Map Destruction and Spread Operator
+    let [pair1,pair2] = map2; //destructuring the map into separate variables that are arrays
+    let spread = [...map2]; //spreads the map into a new array
+}
+// To loop through any collections the for of loop can be used
+let collection1 = [1,2,3,4,5];
+let collection2 = new Set([1,2,3,4,5]);
+let collection3 = new Map([[1,"one"],[2,"two"],[3,"three"],[4,"four"],[5,"five"]]); //requires an index for loop
+
+for(let item of collection3){
+    if (collection1 instanceof Map){
+        console.log(item[0], item[1]);
+    }
+    else{
+        console.log(item);
+    }
+}
