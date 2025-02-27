@@ -13,13 +13,14 @@
 {
     // Math Methods
     let abs = Math.abs(-5); // returns the absolute value
-    let ceil = Math.ceil(5.1); // rounds up
+    let ceil = Math.ceil(2.3); // rounds up
     let floor = Math.floor(5.9); // rounds down
-    let round = Math.round(5.5); // rounds to the nearest whole number
+    let round = Math.round(2.5); // rounds to the nearest whole number
     let max = Math.max(1,2,3,4,5); // returns the largest number
     let min = Math.min(1,2,3,4,5); // returns the smallest number
     let pow = Math.pow(2,3); // returns the base to the exponent
     let sqrt = Math.sqrt(25); // returns the square root
+    console.log(`${Math.floor(2.6)} ${Math.ceil(2.3)} ${Math.round(2.5)}`)
 
     let log = Math.log(10); // returns the natural logarithm
     let log2 = Math.log2(10); // returns the base 2 logarithm

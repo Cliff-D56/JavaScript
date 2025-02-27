@@ -26,4 +26,5 @@ let date1 = new Date(2020, 6); // July 2020, 2nd argument is month *Months are i
 let date2 = new Date(2020, 6, 8); // July 8, 2020. 3rd argument is day
 let date3 = new Date(2020, 6, 8, 10); // July 8, 2020, 10:00, 4th argument is hour
 let date4 = new Date(2020, 6, 8, 10, 20, 45); // July 8, 2020, 10:20:45, 5th argument is minute, 6th is second
+let date5 = Date.now() // Returns milliseconds since 1 Jan 1970
 
