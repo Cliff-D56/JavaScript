@@ -7,8 +7,8 @@
     let vehicle = JSON.parse(vehicleJSON);
 
     // STRINGIFY: converts an object to JSON (string)
-    let vehicleJSON2 = JSON.stringify(vehicle)
-;}
+    let vehicleJSON2 = JSON.stringify(vehicle);
+};
 // Math
 {
     // Math Methods
@@ -40,4 +40,28 @@
         //Ex: Math.random()*(10-5)+5 -> (Math.random = .9) * (max - min + 1 = 6) = 5.4 -> 5.4 + min = 10.4
         return Math.floor(Math.random()*(max-min+1)+min)
     };
+};
+// RegExp
+{
+    let reg1 = new RegExp('c.t'); // Creates a new Regular expression looking for anything that matches c*t
+    let reg2 = /c.t/;
+
+    let string = "Sage is a cat"
+
+    let test = reg1.test(string)// returns true 
+    let match = string.match(reg1) // returns array of info 
+    let search = string.search(reg1) // returns index of result
+    
+    // Metacharacters
+    let dot = /c.t/; // Any character can go inbetween c and t 
+    let asterisk = /c*t/; // t can occur 0<=
+    let plus = /c+t/; // ct can only occur 1<=
+    let question = /c?t/; // t can only occur 1>=
+    let vertical = /c|t/; // c or t can work (Allows parenthesis) EX: /c(a|u)t/
+    let braces = /c{2,3}t/ // allows c to be repeated 2 or 3 times
+    let brackets = /c[aiu]t/ // checks for specific literals in brackets
+    let caret = /c[^au]t/ // makes sure that a and u are NOT in expression 
+    let d = /id\d+/ //means ANY number can go after id
+    let dollarSign = /^(abc\s){3}/ // checks for abc abc abc, no more or less
+
 }
