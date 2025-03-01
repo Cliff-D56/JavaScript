@@ -54,7 +54,7 @@ let initialBalance = totalAmount;
 let payment = totalAmount/months;
 while(totalAmount>=payment){
     let paymentDate = new Date(2025,(todayDate.getMonth()+1),25);
-    payment = totalAmount/months;
+    payment = 217.14//totalAmount/months;
     debtAmounts.sort((a,b)=>b.loanAmout-a.loanAmout);
     paymentDate.setMonth(todayDate.getMonth()+((paymentSchedule.length)));
     paymentSchedule.push(`${paymentDate.toLocaleDateString()}  ${debtAmounts[0].title}: Debt Balance Remaining: ${debtAmounts[0].loanAmout.toFixed(2)}, Payment: ${payment.toFixed(2)} Total Amount Remaining: ${(totalAmount-payment).toFixed(2)}`);
