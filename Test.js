@@ -58,5 +58,3 @@ let teacher1 = new User({name: 'Paula', surname: 'Thompkins', email: 'PaulaThomp
 // teacher1.sendMessage(student1, 'test message');
 // teacher1.sendMessage(student1, 'another message');
 // teacher1.showMessagesHistory();
-
-  

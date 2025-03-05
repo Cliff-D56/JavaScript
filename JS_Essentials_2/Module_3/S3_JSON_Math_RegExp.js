@@ -63,6 +63,7 @@
     let brackets = /c[aiu]t/ // checks for specific literals in brackets
     let caret = /c[^au]t/ // makes sure that a and u are NOT in expression 
     let d = /id\d+/ //means ANY number can go after id
-    let dollarSign = /^(abc\s){3}/ // checks for abc abc abc, no more or less
+    let parentheses = /^(abc\s){3}/ // checks for abc abc abc, the number {3} represents how many times, must be EXACT
+    let dollarSign = /at$/ // checks string to end with "at"
 
 }

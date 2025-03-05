@@ -74,8 +74,8 @@
 
     let lastIndexOf = array1.lastIndexOf(1); //returns the last index of the value (1), or -1 if it doesn't exist
 
-    let find = array1.find((item)=>item===1); //returns the first value that meets the condition
-
+    let find = array1.find((item)=>item===5); //returns the first value that meets the condition
+    console.log(array1 + ""+find)
     let findIndex = array1.findIndex((item)=>item===1); //returns the index of the first value that meets the condition
 
 
