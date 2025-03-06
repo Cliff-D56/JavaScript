@@ -1,3 +1,4 @@
+'use strict'
 // Extended Parameter Handling
 {
     // Default Parameters
@@ -89,6 +90,30 @@
 
 
     // Forwarding calls 
-
     
+
+
+    // First Class Functions
+
+    // Function stored in variables 
+    let func = function(a,b){
+        return a + b;
+    }
+    func(2,2)
+
+    // Can be used in other functions
+    function func2(addition, firstNum, secondNum){
+        console.log(addition(firstNum,secondNum))
+    }
+    func2(func,8,2)
+
+    // Can set up multiple functions inside where each arguemnt goes in order
+    function getMultiplyBy(multiplier) { // first arg
+        console.log(`The multiplier is: ${multiplier}`)
+        return function(a) { // second arg
+            console.log(`The num is: ${a}`)
+            return a * multiplier;
+        }
+    }
+    getMultiplyBy(5)(10);
 }

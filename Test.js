@@ -58,3 +58,15 @@ let teacher1 = new User({name: 'Paula', surname: 'Thompkins', email: 'PaulaThomp
 // teacher1.sendMessage(student1, 'test message');
 // teacher1.sendMessage(student1, 'another message');
 // teacher1.showMessagesHistory();
+'use strict';
+
+let point = {
+x: 100,
+y: 200
+}
+
+function showPoint(msg) {
+console.log(this);  // -> {x: 100, y: 200}
+console.log(`${msg} [${this.x}:${this.y}]`); // -> coordinates [100:100]
+}
+showPoint.call(point, 'coordinates');
