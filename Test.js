@@ -60,13 +60,9 @@ let teacher1 = new User({name: 'Paula', surname: 'Thompkins', email: 'PaulaThomp
 // teacher1.showMessagesHistory();
 'use strict';
 
-let point = {
-x: 100,
-y: 200
+let fibonachi = function(num){
+    let array = [...Array(num-1).keys()].map((item)=>item+1)
+    console.log(array)
+    // return n<=1?0:fibonachi(num);
 }
-
-function showPoint(msg) {
-console.log(this);  // -> {x: 100, y: 200}
-console.log(`${msg} [${this.x}:${this.y}]`); // -> coordinates [100:100]
-}
-showPoint.call(point, 'coordinates');
+console.log(fibonachi(9))

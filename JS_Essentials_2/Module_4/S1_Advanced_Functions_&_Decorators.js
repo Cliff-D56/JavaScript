@@ -116,4 +116,31 @@
         }
     }
     getMultiplyBy(5)(10);
+
+
+    // Decorators
+
+    // Functions that wrap and partially change other functions
+    
+    // Original function
+    let funcA = function(a,b){
+        return a+b;
+    };
+
+    // Decorator function takes in original function then adds something to it 
+    let decor = function(fn){
+        return function(a,b){
+            let result = fn(a,b); //Original function
+            console.log(`The sum of ${a} + ${b} is: ${result}`); // New feature
+        };
+    };
+
+    // New function (Decorator) sets up the original function as the framework with the added feature
+    let funcB = decor(funcA)
+    funcB(2,5)
+
+    // Like recursion it calls itself again and again until it hits one, ALSO since you are returning the entire result into a variable, it will update on every call
+    let factorial = function (n) {
+        return n > 1 ? factorial(n-1) * n : 1;
+        }
 }
