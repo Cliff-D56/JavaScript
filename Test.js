@@ -66,3 +66,4 @@ let fibonachi = function(num){
     // return n<=1?0:fibonachi(num);
 }
 console.log(fibonachi(9))
+
