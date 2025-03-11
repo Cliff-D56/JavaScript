@@ -20,36 +20,80 @@
 }
 
 // Callback Functions
-{
-    
-    const value = 200;
+{ 
+    // const value = 200;
 
-    let request = new XMLHttpRequest();
+    // let request = new XMLHttpRequest();
     
-    //2 ways to set up function call on load, makes no difference
+    // //2 ways to set up function call on load, makes no difference
 
-    //1st way, using onload:
-    let responseLoaded = () => {
-        if (request.status === 200) {
-            const resp = JSON.parse(request.responseText);
-            console.log(`server: ${value} * ${value} = ${resp.square} (${resp.time}ms)`);
-        }
-        }
+    // //1st way, using onload:
+    // let responseLoaded = () => {
+    //     if (request.status === 200) {
+    //         const resp = JSON.parse(request.responseText);
+    //         console.log(`server: ${value} * ${value} = ${resp.square} (${resp.time}ms)`);
+    //     }
+    //     }
         
-    request.onload = responseLoaded;
+    // request.onload = responseLoaded;
 
 
-    //2nd way using event listener
-    request.addEventListener("load", () => { // addEventListener takes two arguements, an event and a function(Can be defined in or out of parameter)
-    if (request.status === 200) {
-        const resp = JSON.parse(request.responseText);
-        console.log(`server: ${value} * ${value} = ${resp.square} (${resp.time}ms)`);
-    }
+    // //2nd way using event listener
+    // request.addEventListener("load", () => { // addEventListener takes two arguements, an event and a function(Can be defined in or out of parameter)
+    // if (request.status === 200) {
+    //     const resp = JSON.parse(request.responseText);
+    //     console.log(`server: ${value} * ${value} = ${resp.square} (${resp.time}ms)`);
+    // }
+    // });
+
+
+    // request.open('GET', `http://localhost:3000/json?value=${value}`);
+    // request.send();
+    
+    // console.log(`browser: ${value} * ${value} = ${value * value}`);
+}
+
+// Promises
+{
+    // Body of Promise
+    let p = new Promise((resolve, reject) => { // Creates Promise with resolve(success) and reject(error) are parameters
+        let value = Math.floor(Math.random() * 4);
+        if (value === 0) { 
+            reject(new Error('!!!')); // Immediately throws Error
+        } else {
+            setTimeout(() => {
+                resolve(value);
+            }, value * 1000);
+        }
     });
 
-
-    request.open('GET', `http://localhost:3000/json?value=${value}`);
-    request.send();
+    let handleResolved = function (value) {
+        console.log(value);
+    }
+        
+    let handleRejected = function (error) {
+        console.log(`Error: ${error.message}`);
+    }
     
-    console.log(`browser: ${value} * ${value} = ${value * value}`);
+    // Handles Both
+    p.then(handleResolved, handleRejected);
+    
+    // Runs ONLY when fulfilled
+    p.then(handleResolved)
+    
+    // Runs ONLY when errors
+    p.then(null,handleRejected)
+    p.catch(handleRejected)
+
+    // Runs when state changes from pending
+    p.finally(()=>{console.log("Finally")})
+
+    console.log('end');
+    
+    
+    let test = new Promise (function(resolve, reject) {
+        setTimeout(() => resolve('Papa'), 1000);
+    });
+    
+    test.finally(() => console.log('promise is settled')).then(v => console.log(`HI ${v}`), e => console.log(e));
 }

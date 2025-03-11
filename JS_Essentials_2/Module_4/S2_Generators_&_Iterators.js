@@ -39,7 +39,7 @@
 {
     // needs * after function keyword
     function* testGenerator() {
-        // interuptts execution
+        // interuptts execution, ALSO RETURNS value
         yield 10;
         yield 20;
         yield 30;
@@ -74,20 +74,20 @@
     // Doesn't NEED iterable object
     function* fibonacci(range = Infinity) {
         let lastButOne = 0, last = 1;
-        console.log("Yield 1")
-        yield lastButOne; // needs next to push through
-        console.log("Yield 2")
-        yield last;
+        console.log(`Yield ${lastButOne}`)
+        yield lastButOne; // needs next to push through, returns lastButOne
+        console.log(`Yield ${last}`)
+        yield last; // returns last 
         // takes in argument and creates iterator for the range 
         for(let i=1; i<=range; i++) {
             let tmp = lastButOne + last;
             lastButOne = last;
             last = tmp;
-            console.log("Yield 3")
-            yield last;
+            console.log(`Yield ${last}`)
+            yield last; // returns last 
         }
     }
-    let fib = fibonacci(5);
+    let fib = fibonacci(6);
 
     // Can be used with any of these 3, HOWEVER ITERATORS CAN ONLY GO THROUGH ONCE SO ONLY ONE WORKS
     console.log([...fib])

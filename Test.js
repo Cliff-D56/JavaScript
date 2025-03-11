@@ -66,3 +66,8 @@ let fibonachi = function(num){
     // return n<=1?0:fibonachi(num);
 }
 // fibonachi(9)
+let p = new Promise (function(resolve, reject) {
+    setTimeout(() => resolve('Papa'), 1000);
+});
+
+p.finally(() => console.log('promise is settled')).then(v => console.log(`HI ${v}`), e => console.log(e));
