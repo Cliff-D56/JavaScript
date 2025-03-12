@@ -96,4 +96,26 @@
     });
     
     test.finally(() => console.log('promise is settled')).then(v => console.log(`HI ${v}`), e => console.log(e));
+
+    let promises = [
+        new Promise((resolve, reject) => {
+            setTimeout(() => resolve(4), 1000);
+        }),
+        new Promise((resolve, reject) => {
+            setTimeout(() => resolve(3), 7000);
+        }),
+        new Promise((resolve, reject) => {
+            setTimeout(() => resolve(2), 5000);
+        }),
+    ];
+    // Waits for ALL promises to be completed
+    Promise.all(promises).then(()=>{console.log("Resolve")}).catch(()=>{console.log("Rejected")})
+
+    // Waits for ANY to be completed, if error occurs then it goes on to next promise, if all fail generates Aggregate error
+    Promise.any(promises)
+    .then(p => console.log(`any: first resolved ${p}`));
+
+    // Waits for FIRST to be completed, if error is first then error is called
+    Promise.race(promises)
+    .then(p => console.log(`race: first resolved ${p}`));
 }
