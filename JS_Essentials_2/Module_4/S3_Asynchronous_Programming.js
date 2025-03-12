@@ -119,3 +119,30 @@
     Promise.race(promises)
     .then(p => console.log(`race: first resolved ${p}`));
 }
+
+// Async/Await
+{
+    // Standard Promise
+    function newPromise(){
+        return new Promise(function (resolve, reject) {
+            setTimeout(() => resolve("Result"), 3000);
+        });
+    }
+
+    // Asynchronous function, to deal with possible errors use try and catch blocks
+    async function testAsync() {
+        try{
+            console.log('testAsync start');
+            // WAITS until Promise is completed (fulfilled)
+            let resp = await newPromise();
+            console.log(resp);
+            console.log('testAsync end');
+        }catch(error){ // Error is caught when promise becomes rejected status 
+            console.log(`error: ${error.message}`);
+        }
+    }
+
+    console.log('before testAsync ...');
+    testAsync();
+    console.log('... after testAsync');
+}

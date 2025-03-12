@@ -57,12 +57,14 @@
 
     // To keep variables in appropiate scope AND return correct values use:
     function CLOSURE(){
+        // ONLY AVAILABLE IN SCOPE
         let closure = 10;
+        // Returns function that then executes
         return function(){
+            // Returns execution of function
             return ++closure
         }
     }
-
     // Can also return methods that will remain private but can be used
     function closureObj(){
         function increment(num){

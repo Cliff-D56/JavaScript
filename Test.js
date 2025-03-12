@@ -71,3 +71,16 @@ let p = new Promise (function(resolve, reject) {
 });
 
 p.finally(() => console.log('promise is settled')).then(v => console.log(`HI ${v}`)).catch(e => console.log(e));
+
+function* test(){
+    let i = 10;
+    while(i){
+        yield i;
+        i++
+    }
+    return 0
+}
+let gen = test()
+console.log(`${gen.next().value}`)
+console.log(`${gen.next().value}`)
+console.log(`${gen.next().value}`)
