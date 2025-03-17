@@ -5,7 +5,7 @@ class Debt{
         this.loanAmout = loanAmout;
     }
 }
-
+// TODO make a date where interest kicks in 
 let AA = new Debt("AA",3.76,2244.81);
 let AB = new Debt("AB",3.76,2600.43);
 let AE = new Debt("AE",5.5,2127.17);
