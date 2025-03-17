@@ -11,7 +11,7 @@ let AB = new Debt("AB",3.76,2600.43);
 let AE = new Debt("AE",5.5,2127.17);
 let AF = new Debt("AF",5.5,1515.73);
 let AG = new Debt("AG",6.53,5016.35);
-let AH = new Debt("AH",6.53,2250);
+let AH = new Debt("AH",6.53,3875.00);
 
 let todayDate = new Date();
 let dueDate = new Date("2029-7-1");
