@@ -87,6 +87,7 @@
             yield last; // returns last 
         }
     }
+    // Placing an int in generator ONLY ALLOWS THAT MANY ELEMENTS if the range is specified or used in generator, otherwise it does nothing
     let fib = fibonacci(6);
 
     // Can be used with any of these 3, HOWEVER ITERATORS CAN ONLY GO THROUGH ONCE SO ONLY ONE WORKS

@@ -84,3 +84,10 @@ let gen = test()
 console.log(`${gen.next().value}`)
 console.log(`${gen.next().value}`)
 console.log(`${gen.next().value}`)
+
+function* test2(){
+    yield*['a','break','caches','d']
+}
+let gen2 = test2()
+console.log(gen2.next().value + " "+gen2.next().value)
+console.log(gen2.next().value + " "+gen2.next().value)
