@@ -7,11 +7,11 @@ class Debt{
 }
 // TODO make a date where interest kicks in 
 let AA = new Debt("AA",3.76,2244.81);
-let AB = new Debt("AB",3.76,2600.43);
+let AB = new Debt("AB",3.76,2613.43);
 let AE = new Debt("AE",5.5,2127.17);
-let AF = new Debt("AF",5.5,1515.73);
-let AG = new Debt("AG",6.53,5016.35);
-let AH = new Debt("AH",6.53,2250);
+let AF = new Debt("AF",5.5,1526.90);
+let AG = new Debt("AG",6.53,5594.13);
+let AH = new Debt("AH",6.53,3875.00);
 
 let todayDate = new Date();
 let dueDate = new Date("2029-7-1");
@@ -54,7 +54,7 @@ let initialBalance = totalAmount;
 let payment = totalAmount/months;
 while(totalAmount>=payment){
     let paymentDate = new Date(2025,(todayDate.getMonth()+1),25);
-    payment = 217.14//totalAmount/months;
+    payment = totalAmount/months;
     debtAmounts.sort((a,b)=>b.loanAmout-a.loanAmout);
     paymentDate.setMonth(todayDate.getMonth()+((paymentSchedule.length)));
     paymentSchedule.push(`${paymentDate.toLocaleDateString()}  ${debtAmounts[0].title}: Debt Balance Remaining: ${debtAmounts[0].loanAmout.toFixed(2)}, Payment: ${payment.toFixed(2)} Total Amount Remaining: ${(totalAmount-payment).toFixed(2)}`);
