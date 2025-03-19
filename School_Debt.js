@@ -4,6 +4,16 @@ class Debt{
         this.interest = interest;
         this.loanAmout = loanAmout;
     }
+    addToAmount(num){
+        this.loanAmout +=num
+    }
+}
+
+function addToAll(num,debts){
+    for(let debt of debts){
+        debt.addToAmount(num)
+        console.log(debt)
+    }
 }
 
 let AA = new Debt("AA",3.76,2244.81);
@@ -12,8 +22,10 @@ let AE = new Debt("AE",5.5,2127.17);
 let AF = new Debt("AF",5.5,1515.73);
 let AG = new Debt("AG",6.53,5016.35);
 let AH = new Debt("AH",6.53,3875.00);
+let debts = [AA,AB,AE,AF,AG,AH];
+// addToAll(73.95,debts)
 
-let todayDate = new Date();
+let todayDate = new Date("2026-1-1");
 let dueDate = new Date("2029-7-1");
 let years = dueDate.getFullYear()-todayDate.getFullYear();
 let months = 0;
@@ -26,7 +38,6 @@ if(todayDate.getMonth()>dueDate.getMonth()){
 console.log(`${years} years and ${months-(years*12)} months remaining`)
 
 
-let debts = [AA,AB,AE,AF,AG,AH];
 let totalAmount = 0;
 let paymentSchedule = [];
 let debtAmounts = [];
@@ -53,8 +64,8 @@ totalAmount = debtAmounts.reduce(
 let initialBalance = totalAmount;
 let payment = totalAmount/months;
 while(totalAmount>=payment){
-    let paymentDate = new Date(2025,(todayDate.getMonth()+1),25);
-    payment = 217.14//totalAmount/months;
+    let paymentDate = new Date(todayDate.getFullYear(),(todayDate.getMonth()+1),23);
+    payment = 200//totalAmount/months;
     debtAmounts.sort((a,b)=>b.loanAmout-a.loanAmout);
     paymentDate.setMonth(todayDate.getMonth()+((paymentSchedule.length)));
     paymentSchedule.push(`${paymentDate.toLocaleDateString()}  ${debtAmounts[0].title}: Debt Balance Remaining: ${debtAmounts[0].loanAmout.toFixed(2)}, Payment: ${payment.toFixed(2)} Total Amount Remaining: ${(totalAmount-payment).toFixed(2)}`);
@@ -91,7 +102,7 @@ while(totalAmount>=payment){
         if(debt.loanAmout<0){
             continue;
         }
-        debt.loanAmout *= ((debt.interest/100)/12)+1;
+        debt.loanAmout *= (((debt.interest/100)/12)+1);
     }
     totalAmount = debtAmounts.reduce(
         (accumulator,current)=>
@@ -107,6 +118,7 @@ while(totalAmount>=payment){
 }
 console.log(paymentSchedule)
 console.log(paymentSchedule.length)
+console.log(paymentSchedule[paymentSchedule.length-1])
 let total = totalpayments.reduce((a,b)=>a+b);
 console.log(`Average Payment: ${(total/paymentSchedule.length).toFixed(2)}`);
 console.log(`Total Amount Paid: ${total.toFixed(2)}, \nwhich is $${(total-initialBalance).toFixed(2)} more than the initial amount`);
