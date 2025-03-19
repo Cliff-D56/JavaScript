@@ -17,7 +17,7 @@ function addToAll(num,debts){
 }
 
 let AA = new Debt("AA",3.76,2244.81);
-let AB = new Debt("AB",3.76,2600.43);
+let AB = new Debt("AB",3.76,2613.43);
 let AE = new Debt("AE",5.5,2127.17);
 let AF = new Debt("AF",5.5,1515.73);
 let AG = new Debt("AG",6.53,5016.35);
