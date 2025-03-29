@@ -13,7 +13,7 @@ let contact = {
     email_1: "RonaldSMurphy@freepost.org",
     email_2: "rsmurphy@briazz.com"
 };
-for(i=1; i<=2; i++) {
+for(let i=1; i<=2; i++) {
     let key = "email_" + i;
     console.log(key);
     /* Due to the specific nature of Dot notation, it can't be used with computed keys due to the fact 

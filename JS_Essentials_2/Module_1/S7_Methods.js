@@ -5,6 +5,10 @@ const obj = {
         console.log(this)
     }
 }
+obj.newfunc = function(){
+    console.log("Papa")
+}
+obj.newfunc();
 
 // In nested objects, this will only go up on level
 const obj2 = {
