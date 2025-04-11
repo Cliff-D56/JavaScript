@@ -19,6 +19,12 @@ let num3 = 5; // DO THIS
 let string = new String(); // Creates new String object
 let string2 = String('Hello World'); // Evaluates if input is a string or not, not a new object
 let string3 = 'Hello World'; // DO THIS
+let stringarr = string3.split("") // -> Split string into an array
+console.log(string3[0]) // -> H, String is an object and subject to bracket notation
+string3.toUpperCase() // -> HELLO WORLD
+let str = string3.substring(0,5) // 
+console.log(str)
+
 
 // Date -> Date and time values
 let date = new Date(); // Creates new Date object, current time and date
@@ -27,4 +33,5 @@ let date2 = new Date(2020, 6, 8); // July 8, 2020. 3rd argument is day
 let date3 = new Date(2020, 6, 8, 10); // July 8, 2020, 10:00, 4th argument is hour
 let date4 = new Date(2020, 6, 8, 10, 20, 45); // July 8, 2020, 10:20:45, 5th argument is minute, 6th is second
 let date5 = Date.now() // Returns milliseconds since 1 Jan 1970
+let date6 = new Date().toLocaleString()
 
