@@ -89,6 +89,9 @@
         obj.incrementX()
         obj.incrementX()  
         console.log(obj);
+        console.log("Closures")
+        let clos = CLOSURE()
+        console.log(clos())
     }
 
     // IIFE 
@@ -106,7 +109,7 @@
             console.log(`Hello, ${this.name}`)
         }
         const person = { name: 'John' };
-        greeting.call(person); // Output: "Hello, John"
+        greeting.call({name : "Edward"}); // Output: "Hello, John"
 
 
         // Apply allows an array of arguments to be APPLIED to function

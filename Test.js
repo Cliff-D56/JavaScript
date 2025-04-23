@@ -91,3 +91,4 @@ function* test2(){
 let gen2 = test2()
 console.log(gen2.next().value + " "+gen2.next().value)
 console.log(gen2.next().value + " "+gen2.next().value)
+
