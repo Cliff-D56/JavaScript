@@ -66,4 +66,5 @@
     let parentheses = /^(abc\s){3}/ // checks for abc abc abc, the number {3} represents how many times, must be EXACT
     let dollarSign = /at$/ // checks string to end with "at"
 
+    console.log(question.test(string))
 }
