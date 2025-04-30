@@ -17,7 +17,8 @@
         }
     }
     let it = almostIterable.iterator(); // -> {next: ƒ}
-    it.next(); // -> {value: undefined, done: false}
+    it.next(); // -> { value: 30, done: false }
+    console.log(it.next())
 
     let SymbolIterator = {
         data: [10, 30, 60, 20, 90],

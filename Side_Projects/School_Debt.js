@@ -24,9 +24,18 @@ let AG = new Debt("AG",6.53,5016.35);
 let AH = new Debt("AH",6.53,3875.00);
 let debts = [AA,AB,AE,AF,AG,AH];
 // addToAll(73.95,debts)
+let BA = new Debt("Lowes",2.67,470.92)
+let BB = new Debt("Capitol 1",1.58,523)
+let BC = new Debt("Capitol 1 Silver",1.4,625)
+let BD = new Debt("Victoria Secret",2.92,912)
+let BE = new Debt("FT",2.08,1055)
+let BF = new Debt("Bank of America",1.67,1600)
+let BG = new Debt("AL",2.33,2300)
+let BH = new Debt("CC",2.67,2900)
+let debts2 = [BA,BB,BC,BD,BE,BF,BG,BH]
 
-let todayDate = new Date("2026-1-1");
-let dueDate = new Date("2029-7-1");
+let todayDate = new Date("2025-6-1");
+let dueDate = new Date("2028-11-23");
 let years = dueDate.getFullYear()-todayDate.getFullYear();
 let months = 0;
 if(todayDate.getMonth()>dueDate.getMonth()){
@@ -65,7 +74,7 @@ let initialBalance = totalAmount;
 let payment = totalAmount/months;
 while(totalAmount>=payment){
     let paymentDate = new Date(todayDate.getFullYear(),(todayDate.getMonth()+1),23);
-    payment = 200//totalAmount/months;
+    payment = 300//totalAmount/months;
     debtAmounts.sort((a,b)=>b.loanAmout-a.loanAmout);
     paymentDate.setMonth(todayDate.getMonth()+((paymentSchedule.length)));
     paymentSchedule.push(`${paymentDate.toLocaleDateString()}  ${debtAmounts[0].title}: Debt Balance Remaining: ${debtAmounts[0].loanAmout.toFixed(2)}, Payment: ${payment.toFixed(2)} Total Amount Remaining: ${(totalAmount-payment).toFixed(2)}`);
